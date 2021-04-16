@@ -1,0 +1,4 @@
+sqlitebrowser
+
+Get encrpted PW row
+SELECT * FROM baseapp.appuser WHERE pw = crypt('malpw', pw);

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Make a Group {% endblock %}
+
+ {% block content %}
+             <div class="container-fluid">
+
+                    <h1 class="h3 mb-3">Investigation Groups </h1>
+
+                        <div class="col-md-9">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6 class="card-subtitle text-muted">Create a Group</h6>
+                                </div>
+                         <div class="card-body">
+                           <form action="/group_create" method="POST">
+                                        <div class="row">
+                                           <div class="mb-3 col-md-6">
+                                                <label class="form-label" >Group Name</label>
+                                                <input type="text" class="form-control" name="gnm" placeholder="Put A Group Name">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                           <div class="mb-3 col-md-6">
+                                                <label class="form-label" >Group Description</label>
+                                                <input type="text" class="form-control" name="gdes" placeholder="About your group......">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                          <div class="col-md-9">
+                                          <div class="card ">
+                                             <div class="card-header">
+                                                  <h6 class="card-subtitle text-muted">Select Students</h6>
+                                              </div>
+                                            <div class="card-body ">
+                                                 {% for value in ids %}
+                                              <input type="checkbox" name="st_id" value="{{value[0]}}">
+                                              <label> {{value[-1]}} </label>
+                                               {% endfor %}
+                                            </div>
+
+                                          </div>
+
+                                          </div>
+
+
+                                        </div>
+                             <button type="submit" class="btn btn-primary btn-lg">Create </button>
+                           </form>
+                         </div>
+       </div>
+                        </div>
+             </div>
+
+   {% endblock %}

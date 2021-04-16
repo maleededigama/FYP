@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}Case{% endblock %}
+
+ {% block content %}
+                <div class="container-fluid p-0">
+
+                    <h1 class="h3 mb-3">Form Layouts</h1>
+
+                    <div class="row">
+                        <div class="col-12 col-xl-5">
+                            <div class="card">
+                                <div class="card-header">
+                                    <u></ul><h5 class="card-subtitle text-muted">MG11 Witness Statement Editable Word </h5></u>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <!--download form-->
+
+                                        <p>Click on the image below to view and download it<p><a href="{{ url_for('static', filename='forms/forms/MG11.pdf') }}" download>
+                                            <img src="{{ url_for('static', filename='img/assets/img/mg11.png') }}" alt="MG11" width="104" height="142">
+                                        </a>
+                                        <!-- end-->
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-xl-5">
+                            <div class="card">
+                                <div class="card-header">
+                                    <u></ul><h5 class="card-subtitle text-muted">Generic MG21-form - Trg Purposes - Editable - v3 - 110118</h5></u>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <!--download form-->
+                                        <p>Click on the image below to download it<p><a href="{{ url_for('static', filename='forms/Generic_MG21_form_Trg_Purposes_Editable_v3_110118.docx') }}" download>
+                                            <img src="{{ url_for('static', filename='img/assets/img/mg21.png') }}" alt="" width="104" height="142">
+                                        </a>
+                                        <!-- end-->
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-xl-5">
+                            <div class="card">
+                                <div class="card-header">
+                                    <u></ul><h5 class="card-subtitle text-muted">Example - Scene Examination Form v1b rpk  0919</h5></u>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <!--download form-->
+
+                                        <p>Click on the image below to view and download it<p><a href="{{ url_for('static', filename='forms/Example_Scene_Examination_Form_v1b_rpk_0919.pdf') }}" download>
+                                            <img src="{{ url_for('static', filename='img/assets/img/example.png') }}" alt="" width="104" height="142">
+                                        </a>
+                                        <!-- end-->
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-xl-5">
+                            <div class="card">
+                                <div class="card-header">
+                                    <u></ul><h5 class="card-subtitle text-muted">Photo Contact Sheet</h5></u>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <!--download form-->
+
+                                        <p>Click on the image below to view and download it<p><a href="{{ url_for('static', filename='forms/Photo_Contact_Sheet.pdf') }}" download>
+                                            <img src="{{ url_for('static', filename='img/assets/img/photo_contacts.png') }}" alt="" width="104" height="142">
+                                        </a>
+                                        <!-- end-->
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+ {% endblock %}

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Case{% endblock %}
+
+ {% block content %}
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card strpied-tabled-with-hover">
+                                <div class="card-header ">
+                                    <h4 class="card-title">FEEDBACK</h4>
+                                    <p class="card-category">Please check your feedback for individual report submitted.</p>
+                                </div>
+                                <div class="card-body table-full-width table-responsive">
+                                    <form action="/create_feedback" method="POST">
+                                       <table class="table table-hover table-striped">
+                                        <thead>
+                                            <th>Case ID</th>
+                                            <th>Group ID</th>
+                                            <th>Student ID</th>
+                                            <th>Grade</th>
+                                            <th>Feedback</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><div class="dropdown">
+                                             <select name="cid" class="btn btn-secondary dropdown-toggle">
+                                                    <option value="No_Case"> Select a Case </option>
+                                                     {% for value in cids %}
+                                                    <option value="{{value}}">{{ value[0] }}  </option>
+                                                        {% endfor %}
+                                                </select>
+                                        </div></td>
+                                         <td><div class="dropdown">
+                                            <select name="gid" class="btn btn-secondary dropdown-toggle">
+                                                  <option value="No_Group">Select a Group</option>
+                                                  {% for value in gids %}
+                                                    <option value="{{ value}}">{{ value[1] }}  </option>
+                                                        {% endfor %}
+                                                </select>
+                                        </div></td>
+                                            <td><div class="mb-3 col-md-10">
+                                                <input type="StudentID" name="student_id" class="form-control" id="StudentID" placeholder="StudentID">
+                                            </div></td>
+                                                <td><div class="dropdown">
+                                             <select name="grade" class="btn btn-secondary dropdown-toggle">
+                                                    <option value="No_Case"> Select a Grade </option>
+                                                     {% for value in grds %}
+                                                    <option value="{{value[0]}}">{{ value[0] }}  </option>
+                                                        {% endfor %}
+                                                </select>
+                                            </div></td>
+                                            <td><div class="mb-3 col-md-20">
+                                                <input type="Feedback" name="feedback"  class="form-control" id="Feedback" placeholder="Feedback">
+                                            </div></td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                                    </form>
+
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+       {% endblock %}

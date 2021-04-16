@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% block title %}Photograph{% endblock %}
+
+ {% block content %}
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="col-12 col-xl-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title">Photography</h5>
+                                </div>
+                                <div class="card-body">
+                                    <form action="/upload-image" method="POST" enctype="multipart/form-data" >
+                                        <div class="mb-3">
+                                            <label class="form-label">Case I #1</label>
+                                            <div class="dropdown">
+                                                <select name="case_id" class="btn btn-secondary dropdown-toggle">
+                                                    <option value="No_Case"> Select a Case </option>
+                                                     {% for value in cids %}
+                                                    <option value="{{value}}">{{ value[0] }}  </option>
+                                                        {% endfor %}
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Group ID</label>
+                                        <div class="dropdown">
+                                                <select name="group_id" class="btn btn-secondary dropdown-toggle">
+                                                  <option value="No_Group">Select a Group</option>
+                                                  {% for value in gids %}
+                                                    <option value="{{ value}}">{{ value[1] }}  </option>
+                                                        {% endfor %}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Photo Description</label>
+                                            <textarea class="form-control" placeholder="Photograph from the Car incident" name="photo_des"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label w-100">File input</label>
+                                            <input type="file" name="img">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end of choosing photo-->
+        <!-- Portfolio Grid-->
+<!--        <section class="page-section bg-light" id="portfolio">-->
+<!--            <div class="container">-->
+<!--                <div class="text-center">-->
+<!--                    <h2 class="section-heading text-uppercase">Portfolio</h2>-->
+<!--                    <h3 class="section-subheading text-muted">Please click on each image to get its Case.</h3>-->
+<!--                </div>-->
+<!--                <div class="row">-->
+<!--                    <div class="col-lg-4 col-sm-6 mb-4">-->
+<!--                        <div class="portfolio-item">-->
+<!--                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">-->
+<!--                                <div class="portfolio-hover">-->
+<!--                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>-->
+<!--                                </div>-->
+<!--                                <img class="img-fluid" src="assets/img/photograph/01-thumbnail.jpg" alt="" />-->
+<!--                            </a>-->
+<!--                            <div class="portfolio-caption">-->
+<!--                                <div class="portfolio-caption-heading">Threads</div>-->
+<!--                                <div class="portfolio-caption-subheading text-muted">Illustration</div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-4 col-sm-6 mb-4">-->
+<!--                        <div class="portfolio-item">-->
+<!--                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">-->
+<!--                                <div class="portfolio-hover">-->
+<!--                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>-->
+<!--                                </div>-->
+<!--                                <img class="img-fluid" src="assets/img/photograph/02-thumbnail.jpg" alt="" />-->
+<!--                            </a>-->
+<!--                            <div class="portfolio-caption">-->
+<!--                                <div class="portfolio-caption-heading">Explore</div>-->
+<!--                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-4 col-sm-6 mb-4">-->
+<!--                        <div class="portfolio-item">-->
+<!--                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">-->
+<!--                                <div class="portfolio-hover">-->
+<!--                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>-->
+<!--                                </div>-->
+<!--                                <img class="img-fluid" src="assets/img/photograph/03-thumbnail.jpg" alt="" />-->
+<!--                            </a>-->
+<!--                            <div class="portfolio-caption">-->
+<!--                                <div class="portfolio-caption-heading">Finish</div>-->
+<!--                                <div class="portfolio-caption-subheading text-muted">Identity</div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">-->
+<!--                        <div class="portfolio-item">-->
+<!--                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">-->
+<!--                                <div class="portfolio-hover">-->
+<!--                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>-->
+<!--                                </div>-->
+<!--                                <img class="img-fluid" src="assets/img/photograph/04-thumbnail.jpg" alt="" />-->
+<!--                            </a>-->
+<!--                            <div class="portfolio-caption">-->
+<!--                                <div class="portfolio-caption-heading">Lines</div>-->
+<!--                                <div class="portfolio-caption-subheading text-muted">Branding</div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">-->
+<!--                        <div class="portfolio-item">-->
+<!--                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">-->
+<!--                                <div class="portfolio-hover">-->
+<!--                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>-->
+<!--                                </div>-->
+<!--                                <img class="img-fluid" src="assets/img/photograph/05-thumbnail.jpg" alt="" />-->
+<!--                            </a>-->
+<!--                            <div class="portfolio-caption">-->
+<!--                                <div class="portfolio-caption-heading">Southwest</div>-->
+<!--                                <div class="portfolio-caption-subheading text-muted">Website Design</div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-4 col-sm-6">-->
+<!--                        <div class="portfolio-item">-->
+<!--                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">-->
+<!--                                <div class="portfolio-hover">-->
+<!--                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>-->
+<!--                                </div>-->
+<!--                                <img class="img-fluid" src="assets/img/photograph/06-thumbnail.jpg" alt="" />-->
+<!--                            </a>-->
+<!--                            <div class="portfolio-caption">-->
+<!--                                <div class="portfolio-caption-heading">Window</div>-->
+<!--                                <div class="portfolio-caption-subheading text-muted">Photography</div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
+    </div>
+
+   {% endblock %}

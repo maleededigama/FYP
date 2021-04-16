@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+{% block title %}Case{% endblock %}
+
+ {% block content %}
+                <div class="container-fluid p-0">
+
+                    <h1 class="h3 mb-3">Nottingham Trent Police</h1>
+
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6 class="card-subtitle text-muted">Crime Scene Examination Report</h6>
+                                </div>
+                                <div class="card-body">
+                                    <form action="/case" method="POST">
+                                        <div class="row">
+                                            <div class="mb-3 col-md-6">
+                                                <label class="form-label" >Offence</label>
+                                                <input type="text" class="form-control" name="offence" placeholder="Burglary Dwelling House">
+                                            </div>
+                                            <div class="mb-3 col-md-3">
+                                                <label class="form-label" >Crime No</label>
+                                                <input type="CrimeNo" class="form-control" name="crime_no" placeholder="CH04360075">
+                                            </div>
+                                            <div class="mb-3 col-md-3">
+                                                <label class="form-label" >Log No</label>
+                                                <input type="LogNo" class="form-control" name="log_no" placeholder="12/050119">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="mb-3 col-md-6">
+                                                <label class="form-label" >Name</label>
+                                                <input type="text" class="form-control" name="name" placeholder="Kendall">
+                                            </div>
+                                            <div class="mb-3 col-md-3">
+                                                <label class="form-label" >Rank</label>
+                                                <input type="text" class="form-control" name="rank" placeholder="CSI">
+                                            </div>
+                                            <div class="mb-3 col-md-3">
+                                                <label class="form-label" >No</label>
+                                                <input type="number" class="form-control" name="_no" placeholder="51680">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" >Location</label>
+                                            <input type="text" class="form-control" name="location" placeholder="2, The Close, Clifton, Nottingham NG11 8NS">
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="mb-3 col-md-6">
+                                                <label class="form-label" >VRM</label>
+                                                <input type="text" class="form-control" name="vrm" placeholder="NA">
+                                            </div>
+                                            <div class="mb-3 col-md-3">
+                                                <label class="form-label" >Make</label>
+                                                <input type="text" class="form-control" name="make" placeholder="NA">
+                                            </div>
+                                            <div class="mb-3 col-md-3">
+                                                <label class="form-label" >Model</label>
+                                                <input type="text" class="form-control" name="model" placeholder="NA">
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="mb-3 col-md-6">
+                                                <label class="form-label" >Date</label>
+                                                <input type="date" class="form-control" name="case_created" placeholder="28 Jan 2019">
+                                            </div>
+                                            <div class="mb-3 col-md-3">
+                                                <label class="form-label" >Start</label>
+                                                <input type="time" class="form-control" name="case_started" placeholder="09.25">
+                                            </div>
+                                            <div class="mb-3 col-md-3">
+                                                <label class="form-label" >Finish</label>
+                                                <input type="time" class="form-control" name="case_finished" placeholder="10.05">
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="inputAddress2">Modulus Operandi (MO)</label>
+                                            <input type="text" class="form-control" name="module_openandi" placeholder="Offender(s) appears to have forced rear kitchen door with unkown (screwdriver) type indstrument. Opened door. Walked in. Entered untidy search. Stole property (cash and jewellery). Ex-En.">
+                                        </div>
+                                        <br>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="inputAddress2">Description</label>
+                                            <input type="text" class="form-control" name="description" placeholder="Premises is 2-storey detached dwelling in quiet cul-de-sac. No easy entry to rear. IP advises all windows & doors were secured and locked on leaving to drop kits at school at approx. 8am. Rtn at 0900 to find burgled. £250 cash and jewellery box containing approx. £4k work of rings & necklaces.
+PPE – Gloves and Mask. Series of photographs of exterior and interior (See log). Examination concentrates on door POE and upstairs bedroom. Visual Examination reveals door POE badly damaged, footwear marks and finger marks on bedroom door. Wood & paint sample & Ali-powdered. Marks lifted from bedroom door.">
+                                        </div>
+
+<!--<div class="content">-->
+<!--    <div class="container-fluid">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-12">-->
+<!--                <div class="card strpied-tabled-with-hover">-->
+<!--                    <div class="card-body table-full-width table-responsive">-->
+<!--                        <table class="table table-hover table-striped">-->
+<!--                            <thead>-->
+<!--                                <th>Time/Ex No: </th>-->
+<!--                                <th>Description</th>-->
+<!--                                <th>Seal No:</th>-->
+<!--                            </thead>-->
+<!--                                <tbody>-->
+<!--                                <tr>-->
+<!--                                    <td>RPK-1</td>-->
+<!--                                    <td>22 Digital Images on SD Card - 01011</td>-->
+<!--                                    <td>NA</td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td>RPK-2</td>-->
+<!--                                    <td>Wood & Paint Sample, edge of front bedroom door (nr handle)</td>-->
+<!--                                    <td>NA</td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td>RPK-3</td>-->
+<!--                                    <td>Finger-mark lift, os surface lower panel, front bedroom door</td>-->
+<!--                                    <td>B001754</td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td>RPK-4</td>-->
+<!--                                    <td>Footwear-mark lift, os surface lower panel, front bedroom door – below handle</td>-->
+<!--                                    <td>D700195</td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td>RPK-5</td>-->
+<!--                                    <td>FFinger-mark lift, os surface lower panel, front bedroom door</td>-->
+<!--                                    <td>NA</td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td>RPK-6</td>-->
+<!--                                    <td>Footwear-mark lift, os surface lower panel, front bedroom door – adjacent to lower hinge</td>-->
+<!--                                    <td>D700196</td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td>RPK-7</td>-->
+<!--                                    <td>F Footwear-mark lift, l/h/s BT Broadband Box, front bedroom floor – below r/h/s window – Block Pattern</td>-->
+<!--                                    <td>D700197</td>-->
+<!--                                </tr>-->
+<!--                                </tbody>-->
+<!--                                </table>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div align="right">-->
+<!--        <button type="button" class="btn btn-primary">-->
+<!--                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Evidence-->
+<!--            </button>-->
+<!--        </div>-->
+<br>
+    <div class="mb-3">
+    <label class="form-label" for="inputAddress2">Additional Information</label>
+        <input type="text" class="form-control" name="additional_information" placeholder="IP believes next door neighbour’s son, Richard Harris, may have Something to do with it as he has just come out of prison and is hanging around with the wrong people again">
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" id="inputAddress2" placeholder="Elimination forms left for spouse and teenage children, will mail in asap. Examination complete – 10.05">
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+</form>
+</div>
+</div>
+</div>
+
+
+                    </div>
+
+                </div>
+        {% endblock %}
+
+
+
+    
+
+
+
+
